@@ -1,0 +1,96 @@
+
+==> Criar uma função CalculadoraDeSalario, que recebe Funcionario e retorna o salário do funcionário já com desconto.
+
+Cenários de testes:
+
++  O primeiro cenário a ser testado será o de desenvolvedores com salários menor
+do que R$3000,0. Sabemos que o desconto é de 10%. 
+  ==> Portanto, se o desenvolvedor ganhar R$1500,00, seu salário menos desconto deve ser de R$ 1350,00 (1500 * 90%)
+	
+	nomeTeste: 'deve Calcular Salario Para Desenvolvedores Com Salario Abaixo Do Limite'
+	code: "
+		const desenvolvedor = {
+			nome: 'José Sebastião',
+			salario: 1500.0,
+			cargo: 'Desenvolvedor' 			
+		};
+
+		const salario = calculaSalario(desenvolvedor);
+		
+		const testPass = 1500 * 0.9; // 1350.00 || 1500 - (1500*0,10)
+		
+		if (salario == testPass) {
+			console.log("Passou");
+		}
+		else{
+			console.log("Deu erro");
+		}
+";
+
+//Fazer dar erro; (Com typescript podemos tratar o tipo de retorno, calculaSalario(funcionario):float)
+function calculaSalario(funcionario){
+	return 1500;
+}
+
+//fazer dar certo (É possível ser mais simples do que isso?)
+function calculaSalario(funcionario){
+	return 1350;
+}
+
+==> fazer desenvolvedores que ganham mais do que R$ 3000.0
+		nomeTeste: 'deve Calcular Salario Para Desenvolvedores Com Salario Acima Do Limite'
+		const desenvolvedor = {
+			nome: 'José Sebastião',
+			salario: 4000.00
+			cargo: 'Desenvolvedor' 			
+		};
+
+		const salario = calculaSalario(desenvolvedor);
+		
+		const testPass = 4000 * 0.8;
+		
+		if (salario == testPass) {
+			console.log("Passou");
+		}
+		else{
+			console.log("Deu erro");
+		}
+
+//Fazer dar erro;
+function calculaSalario(funcionario){
+	return 1500;
+}
+
+//fazer dar certo
+function calculaSalario(funcionario) {
+	if(funcionario.salario > 3000) return 3200.0;
+	return 1350.0;
+}
+
+O próximo teste agora garante que DBAs com salários inferior a R$1500,00 recebem 15% de descon
+		nomeTeste: 'deve Calcular Salario Para DBA Com Salario Abaixo Do Limite'
+		const dba = {
+			nome: 'José Sebastião',
+			salario: 1000.00
+			cargo: 'DBA'			
+		};
+
+		const salario = calculaSalario(dba);
+		
+		const testPass = 1000 * 0.8;
+		
+		if (salario == testPass) {
+			console.log("Passou");
+		}
+		else{
+			console.log("Deu erro");
+		}
+
+//fazer dar certo
+function calculaSalario(funcionario) {
+	if(funcionario.cargo === 'DBA') return 425.00;
+	if(funcionario.salario > 3000) return 3200.0;
+	return 1350.0;
+}
+====>>> Passos de Bebê (ou Baby Steps)
+
