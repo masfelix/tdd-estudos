@@ -4,9 +4,9 @@
 
 describe("combinando cidades com alimentos", () => {
   // Applies only to tests in this describe block
-  beforeEach(() => {
-    return initializeFoodDatabase();
-  });
+  // beforeEach(() => {
+  //   return initializeFoodDatabase();
+  // });
 
   test("Vienna e vitela", () => {
     expect(isValidCityFoodPair("Vienna", "vitela")).toBe(true);

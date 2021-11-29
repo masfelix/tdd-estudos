@@ -1,6 +1,32 @@
 
 ==> Criar uma função CalculadoraDeSalario, que recebe Funcionario e retorna o salário do funcionário já com desconto.
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Cenários de testes:
 
 +  O primeiro cenário a ser testado será o de desenvolvedores com salários menor

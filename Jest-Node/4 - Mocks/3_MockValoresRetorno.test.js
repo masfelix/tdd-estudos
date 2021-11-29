@@ -1,12 +1,13 @@
 describe("Mock Valores de Retorno", () => {
-  const myMock = jest.fn();
-  console.log(myMock());
-  // > undefined
+  // const myMock = jest.fn();
 
-  myMock.mockReturnValueOnce(10).mockReturnValueOnce("x").mockReturnValue(true);
+  // console.log(myMock());
+  // // > undefined
 
-  console.log(myMock(), myMock(), myMock(), myMock());
-  // > 10, 'x', true, true
+  // myMock.mockReturnValueOnce(10).mockReturnValueOnce("x").mockReturnValue(true);
+
+  // console.log(myMock(), myMock(), myMock(), myMock());
+  // // > 10, 'x', true, true
   test("Testando... ", () => {
     const filterTestFn = jest.fn();
 
@@ -14,13 +15,13 @@ describe("Mock Valores de Retorno", () => {
     // e `false` e falso para segunda
     filterTestFn.mockReturnValueOnce(true).mockReturnValueOnce(false);
 
-    expect(filterTestFn()).toBe(true);
+    // expect(filterTestFn()).toBe(true);
 
-    expect(filterTestFn()).toBe(false);
+    // expect(filterTestFn()).toBe(false);
 
     const result = [11, 12].filter((num) => filterTestFn(num));
 
-    console.log(result);
+    console.log("result", result);
     // > [11]
     console.log(filterTestFn.mock.calls[0][0]); // 11
     console.log(filterTestFn.mock.calls[1][0]); // 12

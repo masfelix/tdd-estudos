@@ -21,16 +21,16 @@ function findSmallerLarger(listOfProdutos) {
 function testFindSmallerLarger() {
   const cart = [
     {
-      name: "Liquidificador",
-      price: 250.0,
-    },
-    {
       name: "Geladeira",
       price: 1500.0,
     },
     {
       name: "Jogo de Facas",
       price: 85.0,
+    },
+    {
+      name: "Liquidificador",
+      price: 250.0,
     },
   ];
   const response = findSmallerLarger(cart);
